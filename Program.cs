@@ -34,22 +34,26 @@ namespace studendExercises
 
             // Create 4, or more, students and assign them to one of the cohorts.
             Student student1 = new Student("Jimbo", "Gimbo", "slack/jmbo", cohort28);
+            cohort28.Students.Add(student1);
             Student student2 = new Student("Julia", "Gulia", "slack/jules", cohort29);
+            cohort29.Students.Add(student2);
             Student student3 = new Student("Hernando", "Smith", "slack/herns", cohort29);
+            cohort29.Students.Add(student3);
             Student student4 = new Student("Jill", "Schmill", "slack/herns", cohort30);
+            cohort30.Students.Add(student4);
 
             // Create 3, or more, instructors and assign them to one of the cohorts.
             Instructor Jisie = new Instructor("Jisie", "David", "slack/jisieD", cohort30);
             Instructor Andy = new Instructor("Andy", "Collins", "slack/andyC", cohort29);
-            Instructor Leah = new Instructor("Leah", "Hollen", "slack/andyC", cohort29);
+            Instructor Leah = new Instructor("Leah", "Hollen", "slack/andyC", cohort28);
 
             // Have each instructor assign 2 exercises to each of the students.
-            Jisie.AssignExercise(student1, learnJavaScript);
-            Jisie.AssignExercise(student2, learnReact);
-            Andy.AssignExercise(student3, learnCSharp);
-            Andy.AssignExercise(student4, learnDotNet);
-            Leah.AssignExercise(student1, learnJavaScript);
-            Leah.AssignExercise(student2, learnReact);
+            Jisie.AssignExercise(learnJavaScript);
+            Jisie.AssignExercise(learnReact);
+            Andy.AssignExercise(learnCSharp);
+            Andy.AssignExercise(learnDotNet);
+            Leah.AssignExercise(learnJavaScript);
+            Leah.AssignExercise(learnReact);
 
 
 

@@ -16,10 +16,16 @@ namespace studendExercises
       CohortNumber = cohort;
     }
 
-    public void AssignExercise(Student student,Exercise exercise) {
+    public void AssignExercise(Exercise exercise) {
 
-      student.CurrentExercises.Add(exercise);
-      Console.WriteLine($"Assigned {student.FirstName} {exercise.Name}");
+      // Cohort list of students
+      foreach(Student stu in CohortNumber.Students) {
+        stu.CurrentExercises.Add(exercise);
+        Console.WriteLine($"{stu.FirstName} was asssigned {exercise.Name} by {FirstName}");
+
+      }
+      // student.CurrentExercises.Add(exercise);
+
     }
   }
 }

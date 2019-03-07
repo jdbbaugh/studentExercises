@@ -17,6 +17,7 @@ namespace studendExercises
       SlackHandle = slackHandle;
       CohortNumber = cohort;
       CurrentExercises = new List<Exercise>();
+      // cohort.Students.Add();
     }
 
   }
