@@ -6,7 +6,53 @@ namespace studendExercises
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            // Create 4, or more, exercises.
+            Exercise learnJavaScript = new Exercise()
+            {
+                Name = "Make a user input",
+                CodeLanguage = "JavaScript"
+            };
+            Exercise learnReact = new Exercise()
+            {
+                Name = "Make a React App",
+                CodeLanguage = "React"
+            };
+            Exercise learnCSharp = new Exercise()
+            {
+                Name = "Make a List",
+                CodeLanguage = "C#"
+            };
+            Exercise learnDotNet = new Exercise()
+            {
+                Name = "Make a Dictionary",
+                CodeLanguage = ".NET"
+            };
+            // Create 3, or more, cohorts.
+            Cohort cohort28 = new Cohort("Cohort 28");
+            Cohort cohort29 = new Cohort("Cohort 29");
+            Cohort cohort30 = new Cohort("Cohort 30");
+
+            // Create 4, or more, students and assign them to one of the cohorts.
+            Student student1 = new Student("Jimbo", "Gimbo", "slack/jmbo", cohort28);
+            Student student2 = new Student("Julia", "Gulia", "slack/jules", cohort29);
+            Student student3 = new Student("Hernando", "Smith", "slack/herns", cohort29);
+            Student student4 = new Student("Jill", "Schmill", "slack/herns", cohort30);
+
+            // Create 3, or more, instructors and assign them to one of the cohorts.
+            Instructor Jisie = new Instructor("Jisie", "David", "slack/jisieD", cohort30);
+            Instructor Andy = new Instructor("Andy", "Collins", "slack/andyC", cohort29);
+            Instructor Leah = new Instructor("Leah", "Hollen", "slack/andyC", cohort29);
+
+            // Have each instructor assign 2 exercises to each of the students.
+            Jisie.AssignExercise(student1, learnJavaScript);
+            Jisie.AssignExercise(student2, learnReact);
+            Andy.AssignExercise(student3, learnCSharp);
+            Andy.AssignExercise(student4, learnDotNet);
+            Leah.AssignExercise(student1, learnJavaScript);
+            Leah.AssignExercise(student2, learnReact);
+
+
+
         }
     }
 }
