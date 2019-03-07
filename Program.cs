@@ -44,8 +44,11 @@ namespace studendExercises
 
             // Create 3, or more, instructors and assign them to one of the cohorts.
             Instructor Jisie = new Instructor("Jisie", "David", "slack/jisieD", cohort30);
+            cohort30.Instructors.Add(Jisie);
             Instructor Andy = new Instructor("Andy", "Collins", "slack/andyC", cohort29);
+            cohort30.Instructors.Add(Andy);
             Instructor Leah = new Instructor("Leah", "Hollen", "slack/andyC", cohort28);
+            cohort30.Instructors.Add(Leah);
 
             // Have each instructor assign 2 exercises to each of the students.
             Jisie.AssignExercise(learnJavaScript);
@@ -55,6 +58,7 @@ namespace studendExercises
             Leah.AssignExercise(learnJavaScript);
             Leah.AssignExercise(learnReact);
 
+            // List<string> allStudentsList = new List<string>();
 
 
         }
