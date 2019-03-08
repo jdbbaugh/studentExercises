@@ -7,7 +7,6 @@ namespace studendExercises
     {
         static void Main(string[] args)
         {
-            List<string> allStudentsList = new List<string>();
             // Create 4, or more, exercises.
             Exercise learnJavaScript = new Exercise()
             {
@@ -58,7 +57,19 @@ namespace studendExercises
             Andy.AssignExercise(learnCSharp);
             Andy.AssignExercise(learnDotNet);
             Leah.AssignExercise(learnJavaScript);
-            Leah.AssignExercise(learnReact);
+            Leah.AssignExercise(learnCSharp);
+
+            List<Student> students = new List<Student>(){student1, student2,student3,student4};
+            List<Exercise> exercises = new List<Exercise>(){learnJavaScript, learnReact, learnCSharp, learnDotNet};
+
+            foreach(Student student in students){
+                List<string> studentIsWorkingOn = new List<string>();
+                foreach(Exercise exercise in student.CurrentExercises){
+                    studentIsWorkingOn.Add(exercise.Name);
+                }
+                Console.WriteLine();
+                Console.WriteLine($"{student.FirstName} {student.LastName} is working on Assignments: {String.Join(", ", studentIsWorkingOn)}");
+            }
         }
     }
 }
