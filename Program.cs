@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 
 namespace studendExercises
 {
@@ -44,8 +45,11 @@ namespace studendExercises
 
             // Create 3, or more, instructors and assign them to one of the cohorts.
             Instructor Jisie = new Instructor("Jisie", "David", "slack/jisieD", cohort30);
+            cohort30.Instructors.Add(Jisie);
             Instructor Andy = new Instructor("Andy", "Collins", "slack/andyC", cohort29);
+            cohort30.Instructors.Add(Andy);
             Instructor Leah = new Instructor("Leah", "Hollen", "slack/andyC", cohort28);
+            cohort30.Instructors.Add(Leah);
 
             // Have each instructor assign 2 exercises to each of the students.
             Jisie.AssignExercise(learnJavaScript);
@@ -53,10 +57,19 @@ namespace studendExercises
             Andy.AssignExercise(learnCSharp);
             Andy.AssignExercise(learnDotNet);
             Leah.AssignExercise(learnJavaScript);
-            Leah.AssignExercise(learnReact);
+            Leah.AssignExercise(learnCSharp);
 
+            List<Student> students = new List<Student>(){student1, student2,student3,student4};
+            List<Exercise> exercises = new List<Exercise>(){learnJavaScript, learnReact, learnCSharp, learnDotNet};
 
-
+            foreach(Student student in students){
+                List<string> studentIsWorkingOn = new List<string>();
+                foreach(Exercise exercise in student.CurrentExercises){
+                    studentIsWorkingOn.Add(exercise.Name);
+                }
+                Console.WriteLine();
+                Console.WriteLine($"{student.FirstName} {student.LastName} is working on Assignments: {String.Join(", ", studentIsWorkingOn)}");
+            }
         }
     }
 }

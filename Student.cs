@@ -12,6 +12,7 @@ namespace studendExercises
     public List<Exercise> CurrentExercises{ get; set; }
 
     public Student(string firstName, string lastName, string slackHandle, Cohort cohort) {
+
       FirstName = firstName;
       LastName = lastName;
       SlackHandle = slackHandle;
