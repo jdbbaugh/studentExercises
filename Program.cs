@@ -60,7 +60,6 @@ namespace studendExercises
             Leah.AssignExercise(learnCSharp);
 
             List<Student> students = new List<Student>(){student1, student2,student3,student4};
-            List<Exercise> exercises = new List<Exercise>(){learnJavaScript, learnReact, learnCSharp, learnDotNet};
 
             foreach(Student student in students){
                 List<string> studentIsWorkingOn = new List<string>();
