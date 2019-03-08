@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 
 namespace studendExercises
 {
@@ -6,6 +7,7 @@ namespace studendExercises
     {
         static void Main(string[] args)
         {
+            List<string> allStudentsList = new List<string>();
             // Create 4, or more, exercises.
             Exercise learnJavaScript = new Exercise()
             {
@@ -57,10 +59,6 @@ namespace studendExercises
             Andy.AssignExercise(learnDotNet);
             Leah.AssignExercise(learnJavaScript);
             Leah.AssignExercise(learnReact);
-
-            // List<string> allStudentsList = new List<string>();
-
-
         }
     }
 }
