@@ -220,15 +220,26 @@ namespace studendExercises
 
 
 
-            // TODO:Which student is working on the most exercises? Make sure one of your students has more exercises than the others.
+            // Which student is working on the most exercises? Make sure one of your students has more exercises than the others.
 
 
-            List<Student> mostWork = moreStudents.Where(student => student.CurrentExercises.Count == 0).ToList();
+            List<Student> mostWork = moreStudents.OrderByDescending(student => student.CurrentExercises.Count).ToList();
             Console.WriteLine();
             Console.WriteLine("Student with the most exercises to work on");
             Console.WriteLine("-----------------------------------");
+            // foreach(Student slacker in mostWork) {
+            //     Console.WriteLine($"{slacker.FirstName} {slacker.LastName} has {slacker.CurrentExercises.Count} assignments left to do");
+            // }
+            Console.WriteLine($"{mostWork[0].FirstName} {mostWork[0].LastName} has {mostWork[0].CurrentExercises.Count} assignments left to do.");
 
-            // TODO: How many students in each cohort?
+
+            //  How many students in each cohort?
+            Console.WriteLine();
+            Console.WriteLine("Cohort Numbers.");
+            Console.WriteLine("-----------------------------------");
+            foreach(Cohort cohort in moreCohorts) {
+                Console.WriteLine($"{cohort.Name} has {cohort.Students.Count} students");
+            }
 
 
 
