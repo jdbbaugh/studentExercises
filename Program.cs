@@ -69,27 +69,27 @@ namespace studendExercises
             Student student4 = new Student("Jill", "Schmill", "slack/herns", cohort30);
             cohort30.Students.Add(student4);
             Student larry = new Student("Larry", "Berry", "slack/larBer", cohort28);
-            cohort30.Students.Add(larry);
+            cohort28.Students.Add(larry);
             Student kristin = new Student("Kristin", "Alberts", "slack/albie", cohort29);
-            cohort30.Students.Add(kristin);
+            cohort29.Students.Add(kristin);
             Student loshana = new Student("Loshana", "Obanson", "slack/obslo", cohort29);
-            cohort30.Students.Add(loshana);
+            cohort29.Students.Add(loshana);
             Student tre = new Student("Tre", "Strother", "slack/obslo", cohort31);
-            cohort30.Students.Add(tre);
+            cohort31.Students.Add(tre);
             Student bob = new Student("Bob", "Hombre", "slack/obslo", cohort31);
-            cohort30.Students.Add(bob);
+            cohort31.Students.Add(bob);
 
             // Create 3, or more, instructors and assign them to one of the cohorts.
             Instructor Jisie = new Instructor("Jisie", "David", "slack/jisieD", cohort30);
             cohort30.Instructors.Add(Jisie);
             Instructor Andy = new Instructor("Andy", "Collins", "slack/andyC", cohort29);
-            cohort30.Instructors.Add(Andy);
+            cohort29.Instructors.Add(Andy);
             Instructor Maddi = new Instructor("Maddi", "Albs", "slack/MaddiC", cohort29);
-            cohort30.Instructors.Add(Maddi);
+            cohort29.Instructors.Add(Maddi);
             Instructor Leah = new Instructor("Leah", "Hollen", "slack/leah", cohort28);
-            cohort30.Instructors.Add(Leah);
+            cohort28.Instructors.Add(Leah);
             Instructor Joe = new Instructor("Joe", "Shepherd", "slack/jo", cohort31);
-            cohort30.Instructors.Add(Leah);
+            cohort31.Instructors.Add(Joe);
 
             // Have each instructor assign 2 exercises to each of the students.
             Jisie.AssignExercise(learnJavaScript);
@@ -115,7 +115,8 @@ namespace studendExercises
                 larry,
                 kristin,
                 loshana,
-                tre
+                tre,
+                bob
             };
             moreStudents.AddRange(students);
 
@@ -130,7 +131,8 @@ namespace studendExercises
             List<Cohort> moreCohorts = new List<Cohort>(){
                 cohort28,
                 cohort29,
-                cohort30
+                cohort30,
+                cohort31
             };
             List<Instructor> moreInstructors = new List<Instructor>(){
                 Jisie,
@@ -193,15 +195,15 @@ namespace studendExercises
                     Console.WriteLine($"{student.LastName} {student.FirstName}");
                 }
 
-            //TODO: Display any students that aren't working on any
+            // Display any students that aren't working on any
             // exercises (Make sure one of your student instances don't have
             // any exercises. Create a new student if you need to.)
-            List<Student> noWork = moreStudents.Where(student => student.CurrentExercises[0] == "").ToList();
+            List<Student> noWork = moreStudents.Where(student => student.CurrentExercises.Count == 0).ToList();
                         Console.WriteLine();
             Console.WriteLine("Students with no current exercises to work on");
             Console.WriteLine("-----------------------------------");
             foreach(Student student in noWork) {
-                Console.WriteLine(student.FirstName);
+                Console.WriteLine($"{student.FirstName} {student.LastName}");
             }
 
 
