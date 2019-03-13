@@ -4,10 +4,6 @@ using System.Collections.Generic;
 
 namespace studendExercises
 {
-    public class CohortQuery {
-        public string CohortName {get; set;}
-        public List<string> Students {get; set;}
-    }
     class Program
     {
         static void Main(string[] args)
@@ -200,7 +196,7 @@ namespace studendExercises
             var studentSort = moreStudents.OrderBy(stu => stu.LastName);
 
             Console.WriteLine();
-            Console.WriteLine("Students alphabetically");
+            Console.WriteLine("Students alphabetically (by last name)");
             Console.WriteLine("-----------------------------------");
                 foreach(Student student in studentSort) {
                     Console.WriteLine($"{student.LastName} {student.FirstName}");
