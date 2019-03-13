@@ -58,6 +58,7 @@ namespace studendExercises
             Cohort cohort29 = new Cohort("Cohort 29");
             Cohort cohort30 = new Cohort("Cohort 30");
             Cohort cohort31 = new Cohort("Cohort 31");
+            Cohort cohort32 = new Cohort("Cohort 32");
 
             // Create 4, or more, students and assign them to one of the cohorts.
             Student student1 = new Student("Jimbo", "Gimbo", "slack/jmbo", cohort28);
@@ -78,6 +79,8 @@ namespace studendExercises
             cohort31.Students.Add(tre);
             Student bob = new Student("Bob", "Hombre", "slack/obslo", cohort31);
             cohort31.Students.Add(bob);
+            Student banks = new Student("Banks", "Bankston", "slack/bank", cohort32);
+            cohort32.Students.Add(banks);
 
             // Create 3, or more, instructors and assign them to one of the cohorts.
             Instructor Jisie = new Instructor("Jisie", "David", "slack/jisieD", cohort30);
@@ -90,6 +93,8 @@ namespace studendExercises
             cohort28.Instructors.Add(Leah);
             Instructor Joe = new Instructor("Joe", "Shepherd", "slack/jo", cohort31);
             cohort31.Instructors.Add(Joe);
+            Instructor Steve = new Instructor("Steve", "Brownlee", "slack/sb", cohort32);
+            cohort32.Instructors.Add(Steve);
 
             // Have each instructor assign 2 exercises to each of the students.
             Jisie.AssignExercise(learnJavaScript);
@@ -99,8 +104,13 @@ namespace studendExercises
             Leah.AssignExercise(learnJavaScript);
             Leah.AssignExercise(learnCSharp);
 
+
             List<Student> students = new List<Student>(){student1, student2,student3,student4};
             List<Exercise> exercises = new List<Exercise>(){learnJavaScript, learnReact, learnCSharp, learnDotNet};
+
+            foreach(Exercise practice in exercises) {
+                Steve.AssignExercise(practice);
+            }
 
             // foreach(Student student in students){
             //     List<string> studentIsWorkingOn = new List<string>();
@@ -116,7 +126,8 @@ namespace studendExercises
                 kristin,
                 loshana,
                 tre,
-                bob
+                bob,
+                banks
             };
             moreStudents.AddRange(students);
 
@@ -199,7 +210,7 @@ namespace studendExercises
             // exercises (Make sure one of your student instances don't have
             // any exercises. Create a new student if you need to.)
             List<Student> noWork = moreStudents.Where(student => student.CurrentExercises.Count == 0).ToList();
-                        Console.WriteLine();
+            Console.WriteLine();
             Console.WriteLine("Students with no current exercises to work on");
             Console.WriteLine("-----------------------------------");
             foreach(Student student in noWork) {
@@ -210,6 +221,12 @@ namespace studendExercises
 
 
             // TODO:Which student is working on the most exercises? Make sure one of your students has more exercises than the others.
+
+
+            List<Student> mostWork = moreStudents.Where(student => student.CurrentExercises.Count == 0).ToList();
+            Console.WriteLine();
+            Console.WriteLine("Student with the most exercises to work on");
+            Console.WriteLine("-----------------------------------");
 
             // TODO: How many students in each cohort?
 
